@@ -23,8 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Requête d'insertion
-    $sql = "INSERT INTO `habitat` (nom, description)
-      VALUES (:nom, :description)";
+    $sql = "INSERT INTO `service` (nom, description, images)
+      VALUES (:nom, :description, :images)";
+
+    
 
     // Préparation de la requête
     $stmt = $dbh->prepare($sql);
@@ -32,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Liaison des valeurs
     $stmt->bindParam(':nom', $nom);
     $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':images', $images);
     // Exécution de la requête
     $stmt->execute();
 
@@ -58,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <option value="2">habitats</option>
       <option value="3">image</option>
       <option value="4">animal</option>
+      <option value="5">admin</option>
     </select>
   </div>
   <button type="submit">Enregistrer</button>

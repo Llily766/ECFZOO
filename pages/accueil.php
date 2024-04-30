@@ -45,6 +45,39 @@
     Un immense zoo ,à découvrir;
     Les animaux sont heureux ,on le resssent.</h3>
 
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire en PHP</title>
+</head>
+<body>
+
+<h2>Formulaire en PHP</h2>
+
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+   pseudo: <input type="text" name="pseudo">
+    <br><br>
+    Avis : <input type="text" name="avis">
+    <br><br>
+    <input type="submit" name="submit" value="Envoyer">
+</form>
+
+<?php
+// Vérifier si le formulaire est soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérer les données du formulaire
+    $nom = htmlspecialchars($_POST['nom']);
+    $avis= htmlspecialchars($_POST['avis']);
     
+    // Afficher les données
+    echo "<h3>Informations soumises avec succès:</h3>";
+    echo "Nom: " . $nom . "<br>";
+    echo "Email: " . $avis . "<br>";
+}
+?>
+
+</body>
+</html>
+ 
 
 <?php require_once("../templates/footer.php") ?>;

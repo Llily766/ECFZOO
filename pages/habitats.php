@@ -1,7 +1,7 @@
 <?php require_once('../templates/header.php'); ?>
 
 
-<h1>Habitats</h1>
+<h1>Habitats :</h1>
 <img id="myImage" src="assets/Habitats/la_jungle.png" alt="la_jungle" width="300" height="300">
 
 <div id="text" style="display: block;">

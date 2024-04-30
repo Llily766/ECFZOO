@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Connexion à la base de données
   try {
 
-    $dbh = new PDO("mysql:host=" . $host . ";dbname=" . $dbname 
-  . ";charset=utf8", $user, $pass);
+    $dbh = new PDO("mysql:host=" .'localhost' . ";dbname=" . 'zoo'
+  . ";charset=utf8", 'root','');
 
     // Configuration pour afficher les erreurs PDO
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

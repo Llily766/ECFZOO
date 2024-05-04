@@ -1,9 +1,11 @@
 <?php require_once('../templates/header.php'); ?>
-<h1>
-    Services
-</h1>
+<h1>Services</h1>
 
 
-    
 
-<?php require_once('../templates/footer.php'); ?>
+
+
+
+<?php require_once("../templates/footer.php"); ?>
+
+
